@@ -6,12 +6,12 @@ import JsonFormatter from 'react-json-formatter'
 function App() {
 
   const [data, setData] = useState()
-  const [loading, setLoading] = useState(false)
+  //const [loading, setLoading] = useState(false)
 
   const VITE_STAFF_ENDPOINT_URL = import.meta.env.VITE_STAFF_ENDPOINT_URL
 
   const downloadFile = async () => {
-    setLoading(true)
+    //setLoading(true)
     await axios({
       url: VITE_STAFF_ENDPOINT_URL,
       method: "GET",
@@ -34,9 +34,7 @@ function App() {
 
     }).catch(err => {
       console.log("Error downloading file: ", err)
-      setData(err)
-    }).finally(() => {
-      setLoading(false)
+      //setData(err)
     })
   }
 
