@@ -45,15 +45,15 @@ function App() {
       <div>
         <Header>ACCESS Jotform JSON Generator</Header>
       </div>
-      {/* <OutputBox>{!data ? null : <JsonFormatter json={data} jsonStyle={jsonStyle} />}</OutputBox> */}
-      <OutputBox>
+      <OutputBox>{!data ? null : <JsonFormatter json={data} jsonStyle={jsonStyle} />}</OutputBox>
+      {/* <OutputBox>
         {!data
           ?
             loading
             ? <WaitMessage>Please wait, JSON data is loading...</WaitMessage> : null
           : <JsonFormatter json={data} jsonStyle={jsonStyle} />
         }
-      </OutputBox>
+      </OutputBox> */}
       <div><Button onClick={downloadFile}>Generate Staff.JSON</Button></div>
     </Container>
   )
