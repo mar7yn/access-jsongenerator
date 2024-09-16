@@ -16,6 +16,8 @@ function App() {
     VITE_STAFF_ENDPOINT_URL = process.env.VITE_STAFF_ENDPOINT_URL
   }
 
+  console.log(VITE_STAFF_ENDPOINT_URL)
+
   const downloadFile = async () => {
     setLoading(true)
     await axios({
