@@ -14,9 +14,8 @@ function App() {
     VITE_STAFF_ENDPOINT_URL = import.meta.env.VITE_STAFF_ENDPOINT_URL
   } else {
     VITE_STAFF_ENDPOINT_URL = process.env.VITE_STAFF_ENDPOINT_URL
+    console.log("Hello endpoint: ", VITE_STAFF_ENDPOINT_URL)
   }
-
-  console.log(VITE_STAFF_ENDPOINT_URL)
 
   const downloadFile = async () => {
     setLoading(true)
