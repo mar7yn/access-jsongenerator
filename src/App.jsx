@@ -9,7 +9,7 @@ function App() {
 
   const downloadFile = async () => {
     await axios({
-      url: "https://access-jsongenerator.onrender.com/api",
+      url: "https://access-jsongenerator-api.onrender.com/api",
       method: "GET",
       responseType: "blob"
     }).then(res => {
