@@ -7,9 +7,11 @@ function App() {
 
   const [data, setData] = useState()
 
+  const VITE_STAFF_ENDPOINT_URL = import.meta.env.VITE_STAFF_ENDPOINT_URL
+
   const downloadFile = async () => {
     await axios({
-      url: "https://access-jsongenerator-api.onrender.com/api",
+      url: VITE_STAFF_ENDPOINT_URL,
       method: "GET",
       responseType: "blob"
     }).then(res => {
