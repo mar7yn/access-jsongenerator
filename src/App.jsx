@@ -13,7 +13,7 @@ function App() {
   if (import.meta.env.MODE === "development") {
     VITE_STAFF_ENDPOINT_URL = import.meta.env.VITE_STAFF_ENDPOINT_URL
   } else {
-    VITE_STAFF_ENDPOINT_URL = process.env.VITE_STAFF_ENDPOINT_URL
+    VITE_STAFF_ENDPOINT_URL = "https://access-jsongenerator-api.onrender.com/api"
     console.log("Hello endpoint: ", VITE_STAFF_ENDPOINT_URL)
   }
 
