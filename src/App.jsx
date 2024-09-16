@@ -14,7 +14,6 @@ function App() {
     VITE_STAFF_ENDPOINT_URL = import.meta.env.VITE_STAFF_ENDPOINT_URL
   } else {
     VITE_STAFF_ENDPOINT_URL = "https://access-jsongenerator-api.onrender.com/api"
-    console.log("Hello endpoint: ", VITE_STAFF_ENDPOINT_URL)
   }
 
   const downloadFile = async () => {
@@ -51,7 +50,6 @@ function App() {
       <div>
         <Header>ACCESS Jotform JSON Generator</Header>
       </div>
-      {/* <OutputBox>{!data ? null : <JsonFormatter json={data} jsonStyle={jsonStyle} />}</OutputBox> */}
       <OutputBox>
         {!data
           ?
