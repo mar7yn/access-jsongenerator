@@ -6,10 +6,12 @@ import JsonFormatter from 'react-json-formatter'
 function App() {
 
   const [data, setData] = useState()
+  const [loading, setLoading] = useState(false)
 
   const VITE_STAFF_ENDPOINT_URL = import.meta.env.VITE_STAFF_ENDPOINT_URL
 
   const downloadFile = async () => {
+    setLoading(true)
     await axios({
       url: VITE_STAFF_ENDPOINT_URL,
       method: "GET",
@@ -32,6 +34,9 @@ function App() {
 
     }).catch(err => {
       console.log("Error downloading file: ", err)
+      setData(err)
+    }).finally(() => {
+      setLoading(false)
     })
   }
 
@@ -40,8 +45,16 @@ function App() {
       <div>
         <Header>ACCESS Jotform JSON Generator</Header>
       </div>
-      <OutputBox>{!data ? null : <JsonFormatter json={data} jsonStyle={jsonStyle} />}</OutputBox>
-      <Button onClick={downloadFile}>Generate Staff.JSON</Button>
+      {/* <OutputBox>{!data ? null : <JsonFormatter json={data} jsonStyle={jsonStyle} />}</OutputBox> */}
+      <OutputBox>
+        {!data
+          ?
+            loading
+            ? <WaitMessage>Please wait, JSON data is loading...</WaitMessage> : null
+          : <JsonFormatter json={data} jsonStyle={jsonStyle} />
+        }
+      </OutputBox>
+      <div><Button onClick={downloadFile}>Generate Staff.JSON</Button></div>
     </Container>
   )
 }
@@ -78,4 +91,10 @@ const OutputBox = styled.div`
   overflow-y: scroll ;
   border: 1pt solid black ;
   border-radius: 5px ;
+`
+
+const WaitMessage = styled.div`
+  padding: 20px ;
+  font-size: 26 ;
+  font-family: Arial, Helvetica, sans-serif
 `
