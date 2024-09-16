@@ -6,18 +6,20 @@ import JsonFormatter from 'react-json-formatter'
 function App() {
 
   const [data, setData] = useState()
-  //const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   const VITE_STAFF_ENDPOINT_URL = import.meta.env.VITE_STAFF_ENDPOINT_URL
+  console.log(VITE_STAFF_ENDPOINT_URL)
 
   const downloadFile = async () => {
-    //setLoading(true)
+    setLoading(true)
     await axios({
       url: VITE_STAFF_ENDPOINT_URL,
       method: "GET",
       responseType: "blob"
     }).then(res => {
       const file = new Blob([res.data])
+      console.log(res)
       file.text()
         .then(val => setData(val))
         .catch(err => console.log("Couldn't generate the JSON: ", err))
@@ -34,7 +36,7 @@ function App() {
 
     }).catch(err => {
       console.log("Error downloading file: ", err)
-      //setData(err)
+      setData(err)
     })
   }
 
@@ -43,15 +45,15 @@ function App() {
       <div>
         <Header>ACCESS Jotform JSON Generator</Header>
       </div>
-      <OutputBox>{!data ? null : <JsonFormatter json={data} jsonStyle={jsonStyle} />}</OutputBox>
-      {/* <OutputBox>
+      {/* <OutputBox>{!data ? null : <JsonFormatter json={data} jsonStyle={jsonStyle} />}</OutputBox> */}
+      <OutputBox>
         {!data
           ?
             loading
             ? <WaitMessage>Please wait, JSON data is loading...</WaitMessage> : null
           : <JsonFormatter json={data} jsonStyle={jsonStyle} />
         }
-      </OutputBox> */}
+      </OutputBox>
       <div><Button onClick={downloadFile}>Generate Staff.JSON</Button></div>
     </Container>
   )
