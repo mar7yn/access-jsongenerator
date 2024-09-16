@@ -8,8 +8,13 @@ function App() {
   const [data, setData] = useState()
   const [loading, setLoading] = useState(false)
 
-  const VITE_STAFF_ENDPOINT_URL = import.meta.env.VITE_STAFF_ENDPOINT_URL
-  console.log(VITE_STAFF_ENDPOINT_URL)
+  let VITE_STAFF_ENDPOINT_URL
+
+  if (import.meta.env.MODE === "development") {
+    VITE_STAFF_ENDPOINT_URL = import.meta.env.VITE_STAFF_ENDPOINT_URL
+  } else {
+    VITE_STAFF_ENDPOINT_URL = process.env.VITE_STAFF_ENDPOINT_URL
+  }
 
   const downloadFile = async () => {
     setLoading(true)
