@@ -24,7 +24,6 @@ function App() {
       responseType: "blob"
     }).then(res => {
       const file = new Blob([res.data])
-      console.log(res)
       file.text()
         .then(val => setData(val))
         .catch(err => console.log("Couldn't generate the JSON: ", err))
