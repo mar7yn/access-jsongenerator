@@ -30,7 +30,17 @@ function App() {
         ENDPOINT_URL = import.meta.env.VITE_HOSPITAL_ENDPOINT_URL
       }
     } else {
-      ENDPOINT_URL = "https://access-jsongenerator-api.onrender.com/api" //TODO - change api to staff on prod backend
+      if (param === 'staff') {
+        ENDPOINT_URL = 'https://access-jsongenerator-api.onrender.com/api/staff'
+      } else if (param == 'drugs-infusions') {
+        ENDPOINT_URL = 'https://access-jsongenerator-api.onrender.com/api/medications?type=Infusion'
+      } else if (param == 'drugs-boluses') {
+        ENDPOINT_URL = 'https://access-jsongenerator-api.onrender.com/api/medications?type=Bolus'
+      } else if (param == 'drugs-cds') {
+        ENDPOINT_URL = 'https://access-jsongenerator-api.onrender.com/api/medications?type=cds'
+      } else if (param == 'hospitals') {
+        ENDPOINT_URL = 'https://access-jsongenerator-api.onrender.com/api/hospitals'
+      }
     }
 
     await axios({
