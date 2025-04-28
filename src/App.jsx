@@ -42,6 +42,8 @@ function App() {
         ENDPOINT_URL = 'https://access-jsongenerator-api.onrender.com/api/medications?type=cds'
       } else if (param == 'hospitals') {
         ENDPOINT_URL = 'https://access-jsongenerator-api.onrender.com/api/hospitals'
+      } else if (param == 'drugs-consultant') {
+        ENDPOINT_URL = 'https://access-jsongenerator-api.onrender.com/api/consultant-list'
       }
     }
 
