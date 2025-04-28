@@ -28,6 +28,8 @@ function App() {
         ENDPOINT_URL = import.meta.env.VITE_CDS_ENDPOINT_URL
       } else if (param == 'hospitals') {
         ENDPOINT_URL = import.meta.env.VITE_HOSPITAL_ENDPOINT_URL
+      } else if (param == 'drugs-consultant') {
+        ENDPOINT_URL = import.meta.env.VITE_CONSULTANT_ENDPOINT_URL
       }
     } else {
       if (param === 'staff') {

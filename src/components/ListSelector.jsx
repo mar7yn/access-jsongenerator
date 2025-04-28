@@ -10,6 +10,7 @@ const ListSelector = ({ handleSelectionChange, handleSubmit }) => {
           <option value="staff">Staff</option>
           <option value="drugs-infusions">Drugs - Infusions</option>
           <option value="drugs-boluses">Drugs - Boluses</option>
+          <option value="drugs-consultant">Drugs - Consulant List</option>
           <option value="drugs-cds">Drugs - CDs</option>
           <option value="hospitals">Hospitals</option>
         </select>
