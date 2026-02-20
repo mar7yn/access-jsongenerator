@@ -1,5 +1,3 @@
-import styled from '@emotion/styled'
-
 const ListSelector = ({ handleSelectionChange, handleSubmit }) => {
 
   return (
@@ -13,20 +11,12 @@ const ListSelector = ({ handleSelectionChange, handleSubmit }) => {
           <option value="drugs-consultant">Drugs - Consulant List</option>
           <option value="drugs-cds">Drugs - CDs</option>
           <option value="hospitals">Hospitals</option>
+          <option value="equipment">Equipment</option>
         </select>
         <button type='submit'>Generate JSON</button>
       </form>
     </div>
   )
 }
-
-const Button = styled.button`
-  padding: 15px;
-  margin-top: 10px ;
-  background-color: #0239a1;
-  color: white ;
-  border-radius: 5px ;
-  font-weight: bold ;
-`
 
 export default ListSelector

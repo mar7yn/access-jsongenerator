@@ -30,6 +30,8 @@ function App() {
         ENDPOINT_URL = import.meta.env.VITE_HOSPITAL_ENDPOINT_URL
       } else if (param == 'drugs-consultant') {
         ENDPOINT_URL = import.meta.env.VITE_CONSULTANT_ENDPOINT_URL
+      } else if (param == 'equipment') {
+        ENDPOINT_URL = import.meta.env.VITE_EQUIPMENT_ENDPOINT_URL
       }
     } else {
       if (param === 'staff') {
@@ -44,6 +46,8 @@ function App() {
         ENDPOINT_URL = 'https://access-jsongenerator-api.onrender.com/api/hospitals'
       } else if (param == 'drugs-consultant') {
         ENDPOINT_URL = 'https://access-jsongenerator-api.onrender.com/api/consultant-list'
+      } else if (param == 'equipment') {
+        ENDPOINT_URL = 'https://access-jsongenerator-api.onrender.com/api/equipment'
       }
     }
 
